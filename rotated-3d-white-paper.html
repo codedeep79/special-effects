@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotated 3D white paper</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #607d8b;
+    }
+
+    body .box {
+      width: 200px;
+      height: 300px;
+      position: absolute;
+      left: calc(50% - 100px);
+      top: calc(50% - 100px);
+      transform-style: preserve-3d;
+      transform: rotateY(-45deg);
+      perspective: 1000px;
+      perspective-origin: 160% 50%;
+    }
+
+    body .box::before {
+      content: '';
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 50px;
+      left: 0;
+      bottom: -100px;
+      transform: rotateX(90deg);
+      filter: blur(40px);
+      opacity: 0.5;
+      animation: animate2 0.5s linear infinite;
+    }
+
+    @-moz-keyframes animate2 {
+      0% {
+        transform: translateZ(0px);
+      }
+
+      100% {
+        transform: translateZ(100px);
+      }
+    }
+
+    @-webkit-keyframes animate2 {
+      0% {
+        transform: translateZ(0px);
+      }
+
+      100% {
+        transform: translateZ(100px);
+      }
+    }
+
+    @-o-keyframes animate2 {
+      0% {
+        transform: translateZ(0px);
+      }
+
+      100% {
+        transform: translateZ(100px);
+      }
+    }
+
+    @keyframes animate2 {
+      0% {
+        transform: translateZ(0px);
+      }
+
+      100% {
+        transform: translateZ(100px);
+      }
+    }
+
+    body .box .spans {
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: animate 5s linear infinite;
+    }
+
+    body .box .spans span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(#f1f1f1, #bbb, #f1f1f1);
+    }
+
+    body .box .spans span:nth-child(1) {
+      transform: rotateX(-45deg);
+    }
+
+    body .box .spans span:nth-child(2) {
+      transform: rotateX(0deg);
+    }
+
+    body .box .spans span:nth-child(3) {
+      transform: rotateX(45deg);
+    }
+
+    body .box .spans span:nth-child(4) {
+      transform: rotateX(90deg);
+    }
+
+    @-moz-keyframes animate {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      100% {
+        transform: rotateX(359deg);
+      }
+    }
+
+    @-webkit-keyframes animate {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      100% {
+        transform: rotateX(359deg);
+      }
+    }
+
+    @-o-keyframes animate {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      100% {
+        transform: rotateX(359deg);
+      }
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotateX(0deg);
+      }
+
+      100% {
+        transform: rotateX(359deg);
+      }
+    }
+  </style>
+  <div class="box">
+    <div class="spans">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</body>
+
+</html>

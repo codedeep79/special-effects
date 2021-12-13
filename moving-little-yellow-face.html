@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving little yellow face</title>
+</head>
+
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #5d3800;
+    }
+
+    .face {
+      width: 300px;
+      height: 300px;
+      background: #ffcd00;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .face::before {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 70px;
+      background: #b57700;
+      border-bottom-left-radius: 70px;
+      border-bottom-right-radius: 70px;
+      top: 180px;
+      transition: all 0.5s;
+    }
+
+    .face:hover::before {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      height: 20px;
+      top: 210px;
+    }
+
+    .eyes {
+      display: flex;
+      position: absolute;
+      top: 65px;
+    }
+
+    .eyes>.eye {
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      border-radius: 50%;
+      margin: 0 15px;
+      position: relative;
+    }
+
+    .eyes>.eye::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: #333;
+      border-radius: 50%;
+      top: 50%;
+      left: 25px;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <div class="face">
+    <div class="eyes">
+      <div class="eye"></div>
+      <div class="eye"></div>
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+
+      let face = document.getElementsByClassName('face')[0]
+      face.addEventListener('mousemove', eyeBall)
+      function eyeBall(event) {
+
+        document.querySelectorAll('.eye').forEach(function (eye) {
+          let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+
+          let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+
+          let radian = Math.atan2(event.clientX - x, event.clientY - y);
+
+          let angle = radian * 180 / Math.PI;
+
+          eye.style.transform = `rotate(${angle}deg)`;
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>
