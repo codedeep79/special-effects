@@ -1,0 +1,161 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../images/map.jpg);
+
+}
+
+.ladar {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 480px;
+	height: 480px;
+	background: url(../images/map.jpg);
+	background-size: cover;
+	border-radius: 100%;
+	border: 20px solid #fff;
+	box-shadow: 0 0 20px #262626, inset 0 0 80px #0f0;
+	overflow: hidden;
+
+}
+
+.ladar li:nth-child(1),
+.ladar li:nth-child(2),
+.ladar li:nth-child(3),
+.ladar li:nth-child(4) {
+	list-style: none;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 2px;
+	background: rgba(0, 255, 0, .8);
+}
+
+.ladar li:nth-child(1) {
+	transform: rotate(0deg);
+}
+
+.ladar li:nth-child(2) {
+	transform: rotate(45deg);
+}
+
+.ladar li:nth-child(3) {
+	transform: rotate(90deg);
+}
+
+.ladar li:nth-child(4) {
+	transform: rotate(-45deg);
+}
+
+.ladar li:nth-child(5) {
+	position: absolute;
+	list-style: none;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 2px solid #0f0;
+}
+
+.ladar li:nth-child(6) {
+	position: absolute;
+	list-style: none;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	border: 2px solid #0f0;
+}
+
+.ladar li:nth-child(7) {
+	position: absolute;
+	list-style: none;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 360px;
+	height: 360px;
+	border-radius: 50%;
+	border: 2px solid #0f0;
+}
+
+.ladar li:nth-child(8) {
+	list-style: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: 50%;
+
+	transform-origin: top left;
+	animation: line_r 2s linear infinite;
+	background: linear-gradient(45deg, #0f0 0%, transparent 50%);
+}
+
+@keyframes line_r {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.ladar::before {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40%;
+	top: 50%;
+	border-radius: 50%;
+	background: #0f0;
+	filter: blur(20px);
+	animation: light1 2s linear infinite;
+	filter: blur(2px);
+}
+
+.ladar::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 60%;
+	top: 60%;
+	border-radius: 50%;
+	background: #0f0;
+	filter: blur(2px);
+	animation: light2 2s linear infinite;
+}
+
+@keyframes light1 {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: .5;
+	}
+}
+
+@keyframes light2 {
+	from {
+		opacity: .5;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

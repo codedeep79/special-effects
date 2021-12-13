@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../images/gril.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    animation: backdiv 2s linear infinite;
+}
+
+@keyframes backdiv {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.heart {
+    position: absolute;
+    top: 45%;
+    width: 200px;
+    height: 200px;
+    background: #ff007f;
+    transform: rotate(45deg);
+    animation: hbeat 2s linear infinite;
+    mix-blend-mode: hue;
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transform: translateX(-200px);
+    background: #ff007f;
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transform: translateX(-100px) translateY(-100px);
+    background: #ff007f;
+}
+
+@keyframes hbeat {
+    0% {
+        transform: rotate(45deg) scale(0.8);
+    }
+
+    50% {
+        transform: rotate(45deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(45deg) scale(0.8);
+    }
+}
