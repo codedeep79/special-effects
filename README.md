@@ -26,3 +26,4 @@ Collection of special effects in HTML, CSS
 + [Simulate 1s circular motion](./simulate-1s-circular-motion.html)
 + [Map icon](./map-icon)
 + [color and line of boder](./color-and-line-of-boder)
++ [Font breakdown](./font-breakdown)
