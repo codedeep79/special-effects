@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Way of annimation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: url(./back_an.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: grid;
+            grid-template: 1fr/1fr;
+        }
+
+        .box {
+            margin: 0 auto;
+        }
+
+        ul {
+            display: grid;
+            grid-template: 1fr/repeat(5, 1fr);
+            list-style: none;
+            gap: 1em;
+        }
+
+        li {
+            text-align: center;
+            color: #000;
+            line-height: 80px;
+            text-transform: uppercase;
+            height: 80px;
+            width: 200px;
+            animation-name: move;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            transform: translateY(80vh);
+            opacity: 1;
+            color: #fff;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateY(0vh);
+            }
+
+            to {
+                transform: translateY(80vh);
+            }
+        }
+
+        li:nth-child(1) {
+            background: #ffaa00;
+            animation-timing-function: ease;
+        }
+
+        li:nth-child(2) {
+            background: #5454d8;
+            animation-timing-function: ease-in;
+        }
+
+        li:nth-child(3) {
+            background: #636363;
+            animation-timing-function: ease-in-out;
+        }
+
+        li:nth-child(4) {
+            background: #25CCF7;
+            animation-timing-function: ease-out;
+        }
+
+        li:nth-child(5) {
+            background: #ff5500;
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='box'>
+        <ul>
+            <li>ease</li>
+            <li>ease-in</li>
+            <li>ease-in-out</li>
+            <li>ease-out</li>
+            <li>linear</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body {
+    background: #00aaff;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+}
+
+.box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: rotate(-45deg) skewY(25deg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    transition: 2s;
+}
+
+.box p {
+    position: relative;
+    color: #0055ff;
+    text-align: center;
+    font-size: 2em;
+    line-height: 200px;
+}
+
+.box:hover {
+    top: 20px;
+    box-shadow: none;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: -20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .6);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 2s;
+}
+
+.box:hover::after {
+    left: 0;
+    top: 0;
+    box-shadow: none;
+}
+
+.shadow {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    transform: rotate(-45deg) skewY(25deg);
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+
+    z-index: -1;
+    visibility: visible;
+    transition: 2s;
+}
+
+.box:hover~.shadow {
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simulate 1s circular motion</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        paadding: 0;
+        background: #1289A7;
+    }
+
+    .box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        background: transparent;
+        border-radius: 50%;
+        shape-outside: border-box;
+        border: 2px solid rgba(255, 255, 255, .5);
+    }
+
+    .box p {
+        position: relative;
+        text-align: center;
+        line-height: 300px;
+        color: #fff;
+        font-size: 2em;
+    }
+
+    .line {
+        width: 50%;
+
+        background: transparent;
+        position: absolute;
+        top: 50%;
+
+        transform-origin: right;
+
+        animation: line_r 60s linear infinite;
+    }
+
+    .line p {
+        position: absolute;
+        text-align: right;
+
+    }
+
+    .line:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        transform-origin: center;
+        top: -10px;
+        left: -10px;
+        z-index: 1;
+        border: 1px solid rgba(0, 0, 0, .9);
+    }
+
+    .line:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        /* border-radius: 50%; */
+        background: transparent;
+        transform-origin: none;
+        /* left:100%; */
+        top: 0%;
+        border: 1px solid #fff;
+    }
+
+    @keyframes line_r {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class='box'>
+        <p>1s=1r</p>
+        <div class='line'>
+            <!-- <p>moon</p> -->
+        </div>
+    </div>
+</body>
+
+</html>
