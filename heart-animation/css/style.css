@@ -1,0 +1,75 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.box {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background-color: var(--color1);
+    transform: rotate(45deg);
+    animation: animate 0.7s ease-in-out infinite
+}
+
+.box::before, .box::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    background-color: var(--color1);
+}
+
+.box::before {
+    transform: translate(-50%, 0);
+}
+
+.box::after {
+    transform: translate(0, -50%);
+}
+
+p {
+    margin-top: 100px;
+    font-size: 40px;
+    color: #FFF;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1) rotate(45deg);
+    }
+
+    100% {
+        transform: scale(0.8) rotate(45deg);
+    }
+}

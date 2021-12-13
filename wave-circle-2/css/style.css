@@ -1,0 +1,86 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+    --wave-color1: #f0932b;
+    --wave-color2: #ffbe76;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: var(--border-color);
+    border: 10px solid var(--background-color);
+    box-shadow: 0 0 0 5px var(--color7);
+    border-radius: 50%;
+}
+
+.wave {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color7);
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px var(--color1);
+    overflow: hidden;
+}
+
+.wave::before, .wave::after {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wave::before {
+    border-radius: 30%;
+    background-color: var(--wave-color1);
+    animation: animate 5s linear infinite;
+}
+
+.wave::after {
+    border-radius: 40%;
+    background-color: var(--wave-color2);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        top: 0;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        top: -100px;
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
