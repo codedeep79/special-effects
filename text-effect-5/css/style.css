@@ -1,0 +1,116 @@
+:root {
+    --background-color: #0e3249;
+    --border-color: #7591AD;
+    --text-color: #2980b9;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.word {
+    position: relative;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 180px;
+    font-weight: 1000;
+    perspective: 300px;
+    color: #0b2331;
+}
+
+.word::after,
+.word::before {
+    position: absolute;
+    content: attr(data-word);
+    transform-origin: 7%;
+    transition: 0.5s;
+    text-shadow: none;
+}
+
+.word::after {
+    z-index: -1;
+
+}
+
+.container.ok .word::before {
+    position: absolute;
+    content: attr(data-word);
+    color: #F97F51;
+    transform-origin: 7%;
+    transform: rotateY(-60deg);
+}
+
+.container.ok .word:nth-child(1)::before {
+    transition: 0.5s linear calc(var(--i) * 0.5s);
+}
+
+.container.ok .word:nth-child(2)::before {
+    transition: 0.5s linear calc(var(--i) * 0.5s);
+}
+
+.container.ok .word:nth-child(3)::before {
+    transition: 0.5s linear calc(var(--i) * 0.5s);
+}
+
+.container.ok .word:nth-child(4)::before {
+    transition: 0.5s linear calc(var(--i) * 0.5s);
+}

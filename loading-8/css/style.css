@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3436;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    animation: rotation 1s linear infinite alternate;
+}
+
+.loader::after, .loader::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: seashell;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 50%;
+}
+
+.loader::after {
+    right: 0;
+    background-color: #6fa110;
+}
+
+.loader::before {
+    left: 0;
+    background-color: #df4141;
+}
+
+@keyframes rotation {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(0) rotate(360deg);
+    }
+}
