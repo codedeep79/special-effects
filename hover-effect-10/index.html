@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon">
+            <i class="iconfont icon-dianzan"></i>
+            <div class="shine">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+                <span style="--i:10"></span>
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:16"></span>
+            </div>
+        </div>
+        <div class="icon">
+            <i class="iconfont icon-toubi"></i>
+            <div class="shine">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+                <span style="--i:10"></span>
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:16"></span>
+            </div>
+        </div>
+        <div class="icon">
+            <i class="iconfont icon-shoucang"></i>
+            <div class="shine">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+                <span style="--i:10"></span>
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                <span style="--i:16"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timer_start = null;
+        let timer_end = null;
+        let is_long = true;
+        let mouse_down_start_time = 0;
+        let mouse_up_end_time = 0;
+        let icons = document.querySelectorAll('.icon');
+        icons.forEach((icon, index) => {
+            icon.addEventListener('click', () => {
+                if (index == 0) {
+                    if (!is_long) {
+                        icon.classList.toggle('light');
+                    }
+                } else {
+                    icon.classList.toggle('light');
+                }
+            });
+        })
+
+        icons[0].addEventListener('mousedown', () => {
+            mouse_down_start_time = new Date().getTime();
+
+            timer_start = setTimeout(() => {
+                icons.forEach((icon, index) => {
+                    if (index == 0) {
+                        icon.classList.add('shake');
+                    } else {
+                        icon.classList.add('loading');
+                    }
+                });
+
+            }, 500);
+
+            timer_end = setTimeout(() => {
+                icons.forEach((icon, index) => {
+                    icon.classList.remove('shake');
+                    icon.classList.remove('loading');
+                    icon.classList.add('bang');
+                    icon.classList.add("light");
+                });
+
+                setTimeout(() => {
+                    icons.forEach((icon, index) => {
+                        icon.classList.remove('bang');
+                    });
+                }, 1000);
+
+
+            }, 3500);
+
+
+        });
+        icons[0].addEventListener('mouseup', () => {
+            mouse_up_end_time = new Date().getTime();
+            if (mouse_up_end_time - mouse_down_start_time > 300) {
+                is_long = true;
+            } else {
+                is_long = false;
+            }
+
+            if (timer_start) {
+                clearTimeout(timer_start);
+            }
+            if (mouse_up_end_time - mouse_down_start_time < 3500) {
+                icons.forEach((icon, index) => {
+                    icon.classList.remove('shake');
+                    icon.classList.remove('loading');
+                });
+
+                if (timer_end) {
+                    clearTimeout(timer_end);
+                    timer_end = null;
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

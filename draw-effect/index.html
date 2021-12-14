@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Effect</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="dot" style="--color:#EC3E27"></div>
+    </div>
+    <script>
+        let container = document.querySelector('.container');
+        let color_list = Array(
+            "#EC3E27",
+            "#FD79A8",
+            "#0984E3",
+            "#00B894",
+            "#FDCB6E",
+            "#E056FD",
+            "#F97F51",
+            "#BDC581"
+        );
+
+        let window_width = document.documentElement.clientWidth;
+        let window_height = document.documentElement.clientHeight;
+
+        let dot_width = dot_height = 20;
+
+        let col = Math.floor(window_width / dot_width);
+
+        let row = Math.floor(window_height / dot_height);
+
+        let dot_max = col * row;
+
+
+        for (let index = 0; index < dot_max; index++) {
+
+            let dot = document.createElement('div');
+
+            dot.classList.add('dot');
+
+            let color = color_list[
+                Math.floor(Math.random() * 7)
+            ];
+
+            dot.style = '--color:' + color;
+
+            container.appendChild(dot);
+
+        }
+    </script>
+</body>
+
+</html>
