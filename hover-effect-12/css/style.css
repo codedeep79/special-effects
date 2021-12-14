@@ -1,0 +1,196 @@
+:root {
+    --background-color: #f5f5f5;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bt {
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.bt1 {
+    position: relative;
+
+    width: 180px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f5f5;
+
+    border-radius: 8px;
+}
+
+.bt1 svg {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    left: 20px;
+
+    z-index: 10;
+
+    transition: all 0.8s;
+}
+
+.bt1 span {
+    position: absolute;
+
+    right: 30px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #F97F51;
+}
+
+.bt1:hover svg {
+
+    width: 60px;
+    height: 60px;
+
+    transform: translateX(130px);
+}
+
+
+
+.bt2 {
+    position: relative;
+
+    width: 240px;
+    height: 70px;
+
+    background-color: #f5f5f5;
+
+    border-radius: 70px;
+
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.bt2::after {
+    position: absolute;
+    content: '';
+
+    width: 0%;
+    height: 100%;
+
+    background-color: #fff;
+
+    z-index: -1;
+
+    transition: all 0.5s;
+}
+
+.bt2:hover::after {
+    width: 100%;
+    background-color: #F97F51;
+}
+
+
+.bt2 svg {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    left: 0px;
+
+    background-color: #F97F51;
+    border-radius: 70px;
+
+}
+
+
+.bt2 span {
+    position: absolute;
+
+    left: 90px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #F97F51;
+
+    line-height: 70px;
+}
+
+
+.bt2:hover span {
+    color: #fff;
+}
+
+
+
+.bt3 {
+    position: relative;
+
+    width: 180px;
+    height: 70px;
+
+    background-color: #f5f5f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #F97F51;
+
+    transition: all 0.5s;
+}
+
+.bt3:hover {
+    border-radius: 10px 50px 10px 50px;
+    background-color: #F97F51;
+    color: #fff;
+}

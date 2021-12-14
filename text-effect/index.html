@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effect</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <span style="--i:1" class="big">D</span>
+            <span style="--i:2">r</span>
+            <span style="--i:3">e</span>
+            <span style="--i:4">a</span>
+            <span style="--i:5">m</span>
+            <span style="--i:6" class="big">B</span>
+            <span style="--i:7">i</span>
+            <span style="--i:8">g</span>
+        </h1>
+        <h2>
+            <span style="--i:1" class="big">S</span>
+            <span style="--i:2">t</span>
+            <span style="--i:3">a</span>
+            <span style="--i:4">r</span>
+            <span style="--i:5">t</span>
+            <span style="--i:6" class="big">S</span>
+            <span style="--i:7">m</span>
+            <span style="--i:8">a</span>
+            <span style="--i:9">l</span>
+            <span style="--i:10">l</span>
+        </h2>
+    </div>
+
+    <script>
+        let spans = document.getElementsByTagName('span');
+        window.addEventListener('load', () => {
+            for (let index = 0; index < spans.length; index++) {
+                const element = spans[index];
+                element.classList += ' in';
+            }
+
+        });
+    </script>
+</body>
+
+</html>

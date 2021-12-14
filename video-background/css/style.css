@@ -1,0 +1,225 @@
+@font-face {
+    font-family: "iconfont";
+    src        : url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAASgAAsAAAAACQAAAARTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqFSIRWATYCJAMQCwoABCAFhG0HOhu6B1FUTgJkPyRJgs/LwyEAcJtBFBQA9HAFCQAA4EAE1RrZs7uPqEABKrRcHoAC5MgYtFGxMYKNI8k6+q5f2y/ipex0PJJMk9bTfSe+t9h0WiYlCI0f2h/+d++fU03udie4RjU9GE1guw9meCC/9j+HS5teYPNblssc43nUCzAaWwMbY2L79EDvgOXYbxi7uIzDBBoNaCusLPcnqCu0UYG45zkG1GMqpQQf6qW1OQsLiBdq1KeydA3P3d+Pf6aiDiQ1GWgTV68XNox/hv1MzUzFOLQR2P0ZwCwjYxIoxK1c07mSH5pU0iglls0B9boh0Vdb8s/UqsKctYjq8b88QpKJWqCJmhF2Jpz5uWhSCX6uUkn8XFfJEF2G16MB34lRIOvr5yZJ+WuhqmQr7+CsobG6g90/psvNaSwnBAGKYibPZ7S17huOEWiOS2cUIs2xM78zx9EHT+adKD/GHN/ciKdfK0+kmwlEA81jK8YA0nnMU/3ACWO5npM+GvuPGwFmtHwc0qoZYxUO04/yThkyzhZvlMjsxhKaWqSszVE+Q3KcD8SP+Q7u88b7Z/Dx/WJARvMwnjJM6PFFdDPeq2JEKm1xMLZoJwT/YQJvxPFRzv6G4DwuZszvIDLP82Zthw7od5/xHh7vYWfOiDIEJvz6/2fN9noHmBqx2sRD86ttne2/clLlySM16Hw4tMguZ8ZJo4/bjcktSQlgcVSXIwvCtl3aVvTq2ytARk4WDIek7SABRcGRMPyRVCpoDW4NGw0eBV6HFTb0wwdq29UePKB9vrGWOiWW63Ussck+6zqJye7fiO5or7cs0Z5Nvzx+PD1gDrjxuX2qxtv4+flo8s7rHUtcjzxKT3tGbfhqNscjhrxCYjOkEYvA03bNU+GQWz9n3oJFuYOKOR52WT41rl2v7h1TWW4gHx1bQud8zc45uOib0eu3+9+W3pjQuBoWuEEv3/TgaOkIhd09FEG1qcmFLryxQXHhY79rieky76CTXnNPEah+Sh++ZzMxMK7HeDufiJTMZ0pnaiE5V9X78AigeoOulRwA+V3iqZ6hb+OLCwievfnxRWsL/F/ful4lXz9+DeyqnmHasd45uzb752DXzCsyV1OXIvJMlmIuHkcSJDTqWn6JGJ3++pD01M4k1OsJIanTD1m9QWTBTkKNJjNQq948NJqwWt6kCyuJogQY9wIQ2r0hafUesnYfZMH+oEavf6jVHiVotB06GzYZDq9JMhlCNppP9KwkVoZWml72gZxraHCU6xIuxLnnxYGzazK6opi4jyn5zRmKKFScRLgEx1EYJphy4pMlXVckHfVc5uU9qGslETQtY8QgiA2ZnpDHkogpu7hopn7+gDiuQgYuySnRXhCW8zpHA139GsiVKK6Vcy7dczeOISEUHqawRAQtoYGEeiiB0vx+PmIRXW6LQGqkhwqpuqLu+JLoCtdAI22rEghEIQblQD6z7fJSwwtLe6gEAAA=') format('woff2');
+}
+
+.iconfont {
+    font-family            : "iconfont" !important;
+    font-size              : 16px;
+    font-style             : normal;
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 字体图标来自iconfont */
+.icon-add:before {
+    content: "\e641";
+}
+
+.icon-mail:before {
+    content: "\e650";
+}
+
+.icon-tel:before {
+    content: "\e652";
+}
+
+:root {
+    --background-color: #2c3e50;
+    --border-color    : #7591AD;
+    --text-color      : #34495e;
+    --color1          : #EC3E27;
+    --color2          : #fd79a8;
+    --color3          : #0984e3;
+    --color4          : #00b894;
+    --color5          : #fdcb6e;
+    --color6          : #e056fd;
+    --color7          : #F97F51;
+    --color8          : #BDC581;
+}
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width           : 100vw;
+    height          : 100vh;
+    background-color: var(--background-color);
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    font-family     : 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position   : absolute;
+    width      : 80%;
+    text-align : center;
+    top        : 50%;
+    left       : 50%;
+    transform  : translate(-50%, -200px);
+    font-size  : 50px;
+    font-weight: bold;
+    color      : #fff;
+    z-index    : 2;
+}
+
+.bg {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    width   : 100vw;
+    height  : 100vh;
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.bg .video_bg {
+    /* 全屏显示 */
+    left      : 0;
+    top       : 0;
+    min-width : 100%;
+    min-height: 100%;
+}
+
+/* 加个黑色的遮罩层 */
+.bg::after {
+    position        : absolute;
+    content         : '';
+    top             : 0;
+    left            : 0;
+    width           : 100vw;
+    height          : 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.side {
+    /* 做了这么多案例，第一次用fixed定位 */
+    position: fixed;
+
+    width : 80px;
+    height: 240px;
+
+    left: 0;
+    top : 35%;
+
+    z-index: 3;
+
+    /* background-color: #fff; */
+
+}
+
+
+.side .icon {
+    position: relative;
+
+    width : 80px;
+    height: 80px;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+
+
+/* 利用after伪元素实现背景，对text的 */
+.side .icon::after {
+    position: absolute;
+    content : '';
+
+    width : 80px;
+    height: 80px;
+
+    top : 0;
+    left: 0;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #7591AD;
+    /* 默认透明 */
+    border-right : 1px solid transparent;
+
+    background-color: #fff;
+
+    /* 这里让after伪元素处于 图标i与icon背景之间 */
+    /* 布遮挡图标显示 */
+    z-index: -1;
+
+    /* transition: border-radius 0s; */
+}
+
+/* 第一个icon的右上角圆角 */
+.side .icon:nth-child(1)::after {
+    border-radius: 0 10px 0 0;
+}
+
+/* 第三个icon的右下角圆角 */
+.side .icon:nth-child(3)::after {
+    border-radius: 0 0 10px 0;
+    /* 第三个不需要下边线 */
+    border-bottom: none;
+}
+
+/* 第一个icon的右上角圆角 */
+.side .icon:nth-child(1):hover::after {
+    border-radius: 0 0 0 0;
+}
+
+/* 第三个icon的右下角圆角 */
+.side .icon:nth-child(3):hover::after {
+    border-radius: 0 0 0 0;
+}
+
+
+/* 让所有的icon鼠标移入时显示右侧边线 */
+.side .icon:hover::after {
+    border-right: 1px solid #7591AD;
+}
+
+
+/* 图标 */
+.side .icon i {
+    font-size : 30px;
+    color     : #444;
+    cursor    : pointer;
+    transition: all 0.2s;
+}
+
+.side .icon:hover i {
+    color: #EC3E27;
+}
+
+/* 弹出信息 */
+.side .icon .text {
+    position: absolute;
+    width   : 200px;
+    height  : 80px;
+
+    background-color: #fff;
+
+    left: -140px;
+
+    font-size  : 20px;
+    line-height: 80px;
+
+    padding-left: 10px;
+
+    border-radius: 0 10px 10px 0;
+
+    /* 这里让弹出层text在icon背景层与图标层i之间 */
+    z-index: -2;
+
+    transition: all 0.5s;
+}
+
+.side .icon:hover .text {
+    left: 80px;
+}
