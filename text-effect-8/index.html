@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Effect</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <span class="first">H</span><span>E</span><span>L</span><span>L</span><span>O</span><span
+            class="first">W</span><span>O</span><span>R</span><span>L</span><span>D</span>
+    </div>
+
+    <script>
+        let spans = document.querySelectorAll('span');
+        for (const key in spans) {
+            if (spans.hasOwnProperty(key)) {
+                const element = spans[key];
+                let index = parseInt(key);
+                element.addEventListener("mouseover", (e) => {
+                    element.classList.add('flat');
+                    if (index % 2 == 0) {
+                        spans[index + 1].classList.add('flat');
+                    } else {
+                        spans[index - 1].classList.add('flat');
+                    }
+
+
+                });
+                element.addEventListener("mouseout", (e) => {
+                    element.classList.remove('flat');
+                    if (index % 2 == 0) {
+                        spans[index + 1].classList.remove('flat');
+                    } else {
+                        spans[index - 1].classList.remove('flat');
+                    }
+                });
+
+
+
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

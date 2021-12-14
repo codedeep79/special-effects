@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="tool">
+            <span class="iconfont icon-photo"></span>
+            <span class="iconfont icon-doc"></span>
+            <span class="iconfont icon-video"></span>
+        </div>
+        <div class="button"></div>
+    </div>
+
+    <script>
+        let container = document.querySelector('.container');
+        container.addEventListener('click', (e) => {
+            container.classList.toggle('open')
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -280px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container div {
+    position: absolute;
+    width: calc((13 - var(--i)) * 30px);
+    height: calc((13 - var(--i)) * 30px);
+    background-color: #fff;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: rotate 6s ease infinite, radius 3s ease infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.container div.r {
+    background-color: hsl(0, calc(25% + var(--i) * 10%), calc(25% + var(--i) * 10%));
+}
+
+.container div.w {
+    opacity: 0.7;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(90deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    75% {
+        transform: rotate(270deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes radius {
+
+    0% {
+        border-radius: 0;
+    }
+
+    50% {
+        border-radius: 50%;
+    }
+
+    100% {
+        border-radius: 0;
+    }
+}

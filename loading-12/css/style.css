@@ -1,0 +1,75 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #81ecec;
+    --color2: #fab1a0;
+    --color3: #ffeaa7;
+    --color4: #55efc4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.loader {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+}
+
+.loader::after,
+.loader::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    animation: animate 1s ease-in-out infinite;
+}
+
+.loader::after {
+    box-shadow: 15px 15px var(--color1), -15px -15px var(--color2);
+}
+
+.loader::before {
+    box-shadow: 15px 15px var(--color3), -15px -15px var(--color4);
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+@keyframes animate {
+    50% {
+        width: 40px;
+    }
+}

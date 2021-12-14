@@ -1,0 +1,111 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+    --color_left: #009FFF;
+    --color_right: #ec2f4b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    background-image: linear-gradient(to right bottom, var(--color_left), var(--color_right));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -280px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    background-color: #fff;
+    box-shadow: 10px 10px 20px #00000040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 400px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container span {
+    position: relative;
+}
+
+.container span::after {
+    position: absolute;
+    content: attr(data-text);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-shadow: 3px 3px 2px #ffffff33;
+
+    background-image: linear-gradient(to right bottom, var(--color_left), var(--color_right));
+    background-size: 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+
+    0% {
+
+        background-position: 0% 0%;
+    }
+
+    25% {
+
+        background-position: 100% 0%;
+    }
+
+    50% {
+
+        background-position: 100% 100%;
+    }
+
+    75% {
+
+        background-position: 0% 100%;
+    }
+
+    100% {
+
+        background-position: 0% 0%;
+    }
+}

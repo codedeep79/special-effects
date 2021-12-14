@@ -1,0 +1,97 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+    --s: 4vmin;
+    --g: 1vmin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-gap: var(--g);
+    grid-template-columns: repeat(10, var(--s));
+}
+
+.item {
+    width: var(--s);
+    height: var(--s);
+    background-color: var(--color3);
+    animation: animate_color 1s steps(1, end) infinite,
+        animate 0.6s linear infinite;
+    animation-delay: calc(var(--i) * -0.066s);
+}
+
+@keyframes animate_color {
+    0% {
+        background-color: var(--color2)
+    }
+
+    33% {
+        background-color: var(--color3)
+    }
+
+    66.66% {
+        background-color: var(--color4)
+    }
+
+    100% {
+        background-color: var(--color2)
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1) translateY(0px);
+    }
+
+    33% {
+        transform: scale(0.05) translateY(24px);
+    }
+
+    66.66% {
+        transform: scale(0.05) translateY(-24px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0px);
+    }
+}

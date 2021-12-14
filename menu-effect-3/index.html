@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <section class="tab_bar">
+            <div class="tab">
+                <i class="iconfont icon-home"></i>
+            </div>
+            <div class="tab">
+                <i class="iconfont icon-category"></i>
+            </div>
+            <div class="tab middle">
+                <div style="--angle:-45deg" class="add"><i class="iconfont icon-photo"></i></div>
+                <div style="--angle:0deg" class="add"><i class="iconfont icon-doc"></i></div>
+                <div style="--angle:45deg" class="add"><i class="iconfont icon-video"></i></div>
+            </div>
+            <div class="tab">
+                <i class="iconfont icon-cart"></i>
+            </div>
+            <div class="tab">
+                <i class="iconfont icon-my"></i>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let tab_middle = document.querySelector('.middle');
+
+        tab_middle.addEventListener('click', (e) => {
+            tab_middle.classList.toggle('open');
+        });
+
+    </script>
+</body>
+
+</html>

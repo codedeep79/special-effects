@@ -1,0 +1,92 @@
+:root {
+    --background-color: #000;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -240px);
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(136, 136, 136);
+}
+
+.container {
+    position: relative;
+    width: 240px;
+    height: 240px;
+}
+
+.container .light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: rotate(calc(12deg * var(--i)));
+    animation: animate_bg 1s linear infinite;
+}
+
+@keyframes animate_bg {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.container .light::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: #EC3E27;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+    box-shadow: 0 0 5px #EC3E27, 0 0 35px #EC3E27, 0 0 75px #EC3E27, 0 0 105px #EC3E27, 0 0 155px #EC3E27, 0 0 205px #EC3E27, 0 0 305px #EC3E27;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
