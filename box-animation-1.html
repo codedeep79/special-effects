@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Box animation 1</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		background: #4b4b4b;
+	}
+
+	.backbox {
+		left: 50%;
+		top: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		background: rgba(0, 0, 0, 1);
+		width: 200px;
+		height: 200px;
+	}
+
+	.minbox {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background: #ffaf40;
+
+	}
+
+	.minbox::before {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+
+		content: '';
+		background: #25CCF7;
+		left: 100%;
+
+	}
+
+	.minbox::after {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+
+		content: '';
+		background: #f74f4f;
+		left: 100%;
+		top: 100%;
+		animation: last_an 1s ease-in infinite;
+	}
+
+	@keyframes last_an {
+		to {
+			transform: translateX(-100%);
+		}
+	}
+
+	@keyframes first_an {
+		to {
+			transform: translateX(100%);
+		}
+	}
+</style>
+
+<body>
+	<div class="backbox">
+		<div class="minbox">
+
+		</div>
+	</div>
+</body>
+
+</html>

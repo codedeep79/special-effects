@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../images/wallhaven-rdqgg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    border: 1px solid transparent;
+}
+
+.box {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #00aaff;
+    transform: rotate(45deg);
+    box-shadow: 0 5px 10px #000000;
+    border-radius: 10px;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #00aaff;
+    transform: rotate(30deg);
+    border-radius: 50px;
+    z-index: 2;
+    transition: 2s;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #00aaff;
+    transform: rotate(-30deg);
+    border-radius: 50px;
+    z-index: 1;
+    transition: 2s;
+}
+
+.box:hover::after {
+    transform: rotate(-30deg);
+    border-radius: 20px;
+
+}
+
+.box:hover::before {
+    transform: rotate(30deg);
+    border-radius: 20px;
+    background: #fff;
+}
+
+h1 {
+    position: absolute;
+    left: 90px;
+    top: 130px;
+    color: #FFFFFF;
+    z-index: 3;
+    text-transform: uppercase;
+}
