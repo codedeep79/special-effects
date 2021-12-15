@@ -1,0 +1,145 @@
+:root {
+    --background-color: #e8e6e7;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.goods {
+    position: absolute;
+    width: 350px;
+    height: 280px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 5px 10px 60px #34495e30;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.goods:nth-child(1) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg) translate(-30%, 10%);
+}
+
+.goods:nth-child(2) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg)translate(0%, -15%);
+}
+
+.goods:nth-child(3) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg)translate(30%, 0%);
+}
+
+
+.goods:hover:nth-child(1) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg) translate(-30%, 10%) translateZ(30px);
+}
+
+.goods:hover:nth-child(2) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg) translate(0%, -15%) translateZ(30px);
+}
+
+.goods:hover:nth-child(3) {
+    transform: rotateX(22deg) rotateY(17deg) rotateZ(-14deg) translate(30%, 0%) translateZ(30px);
+}
+
+
+
+.pic {
+    width: 350px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    transform: rotate(8deg) translate(-10px, -45px);
+}
+
+.pic img {
+    width: 100%;
+}
+
+.description {
+    margin: 0 30px;
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description .col {
+    padding-top: 10px;
+}
+
+.description .name {
+    margin-top: -10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.description .texture {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #999;
+}
+
+.description .cost {
+    font-size: 1.3rem;
+    color: var(--color2);
+    font-weight: bold;
+    text-align: right;
+}
+
+.description .star {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.description .star span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #999;
+    margin: 2px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+}
+
+.description .star span.light {
+    background-color: var(--color2);
+}

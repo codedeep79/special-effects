@@ -1,0 +1,243 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAL0AAsAAAAABogAAAKnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBFIEiATYCJAMICwYABCAFhG0HLxvHBRHVk1tkX2DbsEdCBCClilj3K5+chR9DByTwAgUAAAAABFGtYT17G0QFRJaYFKFOVGLD7oElIEkk+XX7v99vXz2UnX+64tZdtie+O0wqpdAJlVQonRYGA2AKDjm9SGSRRh5QWwFwcE39BHqQ2gHNrZOikiMBBzYdYFTRQAa8kYx8w9gFLuEwBLDFhygka7OoiiIaa5QAMuT0tlPMedBoFrdGsKxZqEE2yGGtvtQdWA+/L18SpAgoLAywisp6srtYfm9nJxmfZk99BC8goOUWgAFEARqkqjZSQgZhlIFtJEsA7Ctf4L2dafpmZK8GhP11Vq49AF5QeE8iV3yruQoAHXdGAumjLgYVbGn+nntcehZ07UnQ4bPJK0/injytPvJ04tztrTM3/bd63j/1PLX5bL/h+fPaJ09+J/uwnbq8VXdspSFkd/fd7Y1mH6UMDv/74Ddr/fjkt/zeLaX9/NRmNuYm6+1/kbO3uRaVOge/wzIAmDJDmSUEEHgw5eN00Zj/h10WAF4fC50NXaYs/WxgfRKrwM8S9WzQusQyKa2Kam2KyFEjFWCLLWAOO1x5N1brcWcJwRqP+7NZ4Z2CgTVBqCajwAI7kryWWHOuXLAlkly43A43JsggugQQwRoAwZljoHDkPBg4cxfV5FuwwJNvYImzZMCWGulsaEeIQE55TehK6Ravn9C5iUJ2LFqO8rfJuvOvJCsJ6X0S4/hx2BsU41sUkswxxdxbI1VGlijATXAc+X6EsUQu3WjPVo1n+32ue1HvJgqgzJrQldItXj+hcxOF7LfXcunz22Td+VfSUlLj3ycxTvc47A16oFvKsFfJvTxj7q2RKiNLFOAm6Ee+H2Fc38+lG+3ZI0LxbN9uxX2VvfXVwQcUsAosnRK7h0GuPY59AgAA') format('woff2');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-apple:before {
+    content: "\e60b";
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 300px);
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 1000;
+
+}
+
+
+.container {
+    position: relative;
+    width: 1040px;
+    height: 100vh;
+    background-color: rgb(7, 17, 27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+}
+
+.xxl,
+.xl,
+.l,
+.m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: translateZ(50px) scale(.90);
+}
+
+.xxl {
+    position: absolute;
+    width: 940px;
+    height: 940px;
+    border-radius: 50%;
+    top: -200px;
+    z-index: 70;
+    background-color: rgb(7, 17, 27);
+    background-image:
+        radial-gradient(circle at top center, transparent 75%, rgba(7, 17, 27) 85%),
+        radial-gradient(circle at center, transparent 60%, rgb(20, 50, 80) 80%);
+}
+
+.xl {
+    position: absolute;
+    width: 550px;
+    height: 640px;
+    border-radius: 50%;
+    box-shadow: 0 50px 50px rgba(233, 115, 21, .4);
+    z-index: 70;
+}
+
+.xl::before,
+.xl::after {
+    content: '';
+    position: absolute;
+    width: 640px;
+    height: 640px;
+    border-radius: 50%;
+
+}
+
+.xl::after {
+    background-color: rgb(7, 17, 27);
+    background-image:
+        radial-gradient(circle at 45% 40%, transparent 68%, rgb(255, 255, 255)),
+        radial-gradient(circle at 60% 45%, transparent 68%, rgb(255, 255, 255)),
+        radial-gradient(circle at 0% 30%, transparent 75%, rgba(255, 210, 4, .5) 90%, rgba(250, 240, 230, 0.9) 100%),
+        radial-gradient(circle at 40% -30%, transparent 70%, rgb(255, 110, 0) 90%),
+        radial-gradient(circle at 50% 70%, rgb(255, 140, 0), transparent 50%),
+        radial-gradient(circle at center, transparent 60%, rgba(100, 135, 250, 0.7) 75%, rgb(255, 255, 255) 80%);
+}
+
+.l {
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    bottom: 35px;
+    z-index: 80;
+    background-color: rgb(17, 39, 73);
+}
+
+.l::before,
+.l::after {
+    content: '';
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+}
+
+.l::before {
+    background-image:
+        radial-gradient(circle at 100% 100%, transparent 40%, rgb(20, 54, 93, .3) 75%, rgb(58, 90, 134) 90%),
+        radial-gradient(circle at 0% 20%, transparent 40%, rgb(255, 117, 4) 85%, rgb(255, 255, 255) 90%),
+        radial-gradient(circle at center, rgb(255, 117, 4), transparent 60%);
+    z-index: 1;
+}
+
+.l::after {
+    box-shadow: 0 0 80px rgba(250, 200, 160, .4),
+        inset 0 0 50px rgba(250, 180, 140, .4);
+    z-index: 2;
+
+}
+
+.m {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    top: 40px;
+    z-index: 90;
+    background-color: rgb(168, 69, 3);
+}
+
+.m::before,
+.m::after {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+}
+
+.m::before {
+    background-image:
+        radial-gradient(circle at 100% 80%, transparent 40%, rgb(246, 108, 19, .3) 50%, rgb(6, 62, 100) 85%),
+        radial-gradient(circle at 90% 10%, rgb(255, 255, 255) 0%, rgb(223, 124, 12) 30%, transparent 50%),
+        radial-gradient(circle at center, rgb(250, 100, 0), transparent 80%);
+    z-index: 1;
+}
+
+.m::after {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3),
+        inset 0 0 30px rgba(255, 255, 255, .5);
+}
+
+.apple {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.apple::before {
+    position: absolute;
+    font-family: "iconfont" !important;
+    font-size: 210px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e60b";
+    color: transparent;
+    background-image: linear-gradient(-120deg, rgb(229, 192, 136)30%, rgb(233, 115, 21) 60%, rgb(231, 100, 4) 84%);
+    background-size: 83% 83%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.apple::after {
+    position: absolute;
+    font-family: "iconfont" !important;
+    font-size: 210px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e60b";
+    color: transparent;
+    background-color: #00000022;
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: blur(5px);
+}

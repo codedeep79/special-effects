@@ -1,0 +1,110 @@
+:root {
+    --background-color: #000;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 200px;
+    overflow: hidden;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    box-sizing: border-box;
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    border: 15px solid var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animate 3.2s ease-in-out infinite reverse both;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+.circle::before {
+    position: absolute;
+    content: '';
+    box-sizing: border-box;
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    border: 15px solid var(--color);
+    filter: blur(10px);
+}
+
+.circle::after {
+    position: absolute;
+    content: '';
+    box-sizing: border-box;
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    border: 15px solid var(--color);
+    filter: blur(15px);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateZ(190px) scale(1);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateZ(-600px) scale(0.2);
+        opacity: 0;
+    }
+}

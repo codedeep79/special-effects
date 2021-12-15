@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movement cursor effect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <script>
+        let container = document.querySelector('.container');
+
+        let color_list = Array(
+            "#ec3e27",
+            "#fd79a8",
+            "#0984e3",
+            "#00b894",
+            "#fdcb6e",
+            "#e056fd",
+            "#F97F51",
+            "#BDC581"
+        )
+
+        let space_size = 10
+
+
+        let offset_x = -10;
+        let offset_y = -20;
+
+        for (let x = offset_x; x < 10; x++) {
+
+            for (let y = offset_y; y < 8; y++) {
+
+
+                let delay = 0;
+
+
+                let position_x = x - offset_x;
+                let position_y = y - offset_y;
+                let center_x = Math.floor(position_x / (space_size * 2)) * (space_size * 2) + space_size;
+                let center_y = Math.floor(position_y / (space_size * 2)) * (space_size * 2) + space_size;
+
+                let weight_x = Math.abs(center_x - position_x)
+                let weight_y = Math.abs(center_y - position_y)
+                let weight_sub = Math.abs(weight_x - weight_y);
+                let weight = weight_x;
+                if (weight_y > weight_x) {
+                    weight = weight_y;
+                }
+                delay = weight;
+                if (delay == 0) {
+                    delay = 1;
+                } else {
+                    delay = delay - (weight_sub * 0.4);
+                }
+                let ball = document.createElement('div');
+                ball.classList.add('ball');
+                let color = color_list[Math.floor(Math.random() * 7)];
+                ball.style = '--x:' + x + ';--y:' + y + ';--delay:' + delay + ';--color:' + color + ';';
+                container.appendChild(ball);
+            }
+
+        }
+        let window_width = document.documentElement.clientWidth;
+        let window_height = document.documentElement.clientHeight;
+        container.addEventListener("mousemove", (e) => {
+            let left = e.clientX;
+            let top = e.clientY;
+            let left_p = left / window_width * 100;
+            let top_p = top / window_height * 100;
+            container.style.perspectiveOrigin = left_p + "% " + top_p + "%";
+        });
+
+
+
+    </script>
+</body>
+
+</html>

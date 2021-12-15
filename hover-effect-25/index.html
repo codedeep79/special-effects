@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="face" class="face">
+            <div id="designer" class="designer">
+                <div>
+                    <a href="#">
+                        <h1>designer</h1>
+                        <p>UI/UX Designer with a passion for designing beautiful and functional user experiences.</p>
+                    </a>
+                </div>
+            </div>
+            <div id="coder" class="coder">
+                <div>
+                    <a href="#">
+                        <h1>&lt;coder&gt;</h1>
+                        <p>Front End Developer who focuses on writing clean, elegant and efficient code.</p>
+                    </a>
+                </div>
+            </div>
+            <div id="designer-img" class="designer-img"></div>
+            <div id="coder-img" class="coder-img"></div>
+            <div id="designer-bg" class="designer-bg"></div>
+            <div id="coder-bg" class="coder-bg"></div>
+        </div>
+    </div>
+
+    <script>
+        let timer = null;
+
+
+        let designer = document.getElementById('designer');
+        let coder = document.getElementById('coder');
+        let designerImg = document.getElementById('designer-img');
+        let coderImg = document.getElementById('coder-img');
+        let designerBg = document.getElementById('designer-bg');
+        let coderBg = document.getElementById('coder-bg');
+
+
+        let currentX = {
+            'designer_img': 100,
+            'coder_img': 100,
+            'designer_bg': 100,
+            'coder_bg': 100
+        };
+
+        let targetX = {
+            'designer_img': 100,
+            'coder_img': 100,
+            'designer_bg': 100,
+            'coder_bg': 100
+        };
+
+
+        let window_width = document.documentElement.clientWidth;
+
+        let center = window_width / 2;
+
+        let container = document.querySelector('.container');
+
+
+        let delay_listen = () => {
+
+            container.addEventListener('mouseover', (e) => {
+
+                if (e.relatedTarget && container.compareDocumentPosition(e.relatedTarget) == 10) {
+
+                    let x = e.clientX;
+
+                    let x_offset = x - center;
+
+                    let new_designer_img_x = 100 - (x_offset / (center / 70));
+                    let new_coder_img_x = 100 + (x_offset / (center / 70));
+
+                    let new_designer_bg_x = 100 - (x_offset / (center / 50));
+                    let new_coder_bg_x = 100 + (x_offset / (center / 50));
+
+
+                    targetX.designer_img = new_designer_img_x;
+                    targetX.coder_img = new_coder_img_x;
+                    targetX.designer_bg = new_designer_bg_x;
+                    targetX.coder_bg = new_coder_bg_x;
+
+
+                    if (!timer) { action(); }
+                }
+            });
+
+            container.addEventListener('mousemove', (e) => {
+
+                let x = e.clientX;
+
+                let x_offset = x - center;
+
+                let new_designer_img_x = 100 - (x_offset / (center / 70));
+                let new_coder_img_x = 100 + (x_offset / (center / 70));
+
+                let new_designer_bg_x = 100 - (x_offset / (center / 50));
+                let new_coder_bg_x = 100 + (x_offset / (center / 50));
+
+
+                targetX.designer_img = new_designer_img_x;
+                targetX.coder_img = new_coder_img_x;
+                targetX.designer_bg = new_designer_bg_x;
+                targetX.coder_bg = new_coder_bg_x;
+
+
+                if (!timer) { action(); }
+
+            });
+
+
+            container.addEventListener('mouseout', (e) => {
+
+                if (e.relatedTarget && container.compareDocumentPosition(e.relatedTarget) == 10) {
+
+                    targetX.designer_img = 100;
+                    targetX.coder_img = 100;
+                    targetX.designer_bg = 100;
+                    targetX.coder_bg = 100;
+
+
+                    if (!timer) { action(); }
+                }
+            });
+        }
+
+        let action = (e) => {
+
+            timer = setInterval(() => {
+
+
+                if (currentX.designer_img < targetX.designer_img) {
+                    currentX.designer_img += 1;
+
+                    if (currentX.designer_img > targetX.designer_img) {
+                        currentX.designer_img = targetX.designer_img;
+                    }
+                    designerImg.style = "left:" + currentX.designer_img + "px ";
+                }
+
+                if (currentX.designer_img > targetX.designer_img) {
+                    currentX.designer_img -= 1;
+
+                    if (currentX.designer_img < targetX.designer_img) {
+                        currentX.designer_img = targetX.designer_img;
+                    }
+                    designerImg.style = "left:" + currentX.designer_img + "px ";
+                }
+
+                if (currentX.coder_img < targetX.coder_img) {
+                    currentX.coder_img += 1;
+
+                    if (currentX.coder_img > targetX.coder_img) {
+                        currentX.coder_img = targetX.coder_img;
+                    }
+                    coderImg.style = "right:" + currentX.coder_img + "px ";
+                }
+
+                if (currentX.coder_img > targetX.coder_img) {
+                    currentX.coder_img -= 1;
+                    if (currentX.coder_img < targetX.coder_img) {
+                        currentX.coder_img = targetX.coder_img;
+                    }
+                    coderImg.style = "right:" + currentX.coder_img + "px ";
+                }
+
+
+                if (currentX.designer_bg < targetX.designer_bg) {
+
+                    currentX.designer_bg += 1 * (50 / 70);
+
+                    if (currentX.designer_bg > targetX.designer_bg) {
+                        currentX.designer_bg = targetX.designer_bg;
+                    }
+
+                    designerBg.style = "left:" + currentX.designer_bg + "px ";
+                }
+
+                if (currentX.designer_bg > targetX.designer_bg) {
+
+                    currentX.designer_bg -= 1 * (50 / 70);
+
+                    if (currentX.designer_bg < targetX.designer_bg) {
+                        currentX.designer_bg = targetX.designer_bg;
+                    }
+
+                    designerBg.style = "left:" + currentX.designer_bg + "px ";
+                }
+
+                if (currentX.coder_bg < targetX.coder_bg) {
+
+                    currentX.coder_bg += 1 * (50 / 70);
+
+                    if (currentX.coder_bg > targetX.coder_bg) {
+                        currentX.coder_bg = targetX.coder_bg;
+                    }
+                    coderBg.style = "right:" + currentX.coder_bg + "px ";
+                }
+                if (currentX.coder_bg > targetX.coder_bg) {
+                    currentX.coder_bg -= 1 * (50 / 70);
+                    if (currentX.coder_bg < targetX.coder_bg) {
+                        currentX.coder_bg = targetX.coder_bg;
+                    }
+                    coderBg.style = "right:" + currentX.coder_bg + "px ";
+                }
+
+                let current_mouse = (100 - currentX.designer_bg) * (center / 50) + center;
+
+                if (current_mouse - center < 0) {
+                    designerBg.style.opacity = "1";
+                    designer.style.opacity = "1";
+                }
+                if (current_mouse - center >= 0 && current_mouse - center <= 385) {
+                    designerBg.style.opacity = 1 - (current_mouse - center) / 385;
+                    designer.style.opacity = 1 - (current_mouse - center) / 385;
+                }
+                if (current_mouse - center > 385) {
+                    designerBg.style.opacity = '0 ';
+                    designer.style.opacity = '0 ';
+                }
+
+                if (current_mouse - center > 0) {
+                    coderBg.style.opacity = "1";
+                    coder.style.opacity = "1";
+                }
+                if (current_mouse - center <= 0 && current_mouse - center >= -385) {
+                    coderBg.style.opacity = 1 - (current_mouse - center) / -385;
+                    coder.style.opacity = 1 - (current_mouse - center) / -385;
+                }
+                if (current_mouse - center < -385) {
+                    coderBg.style.opacity = '0';
+                    coder.style.opacity = '0';
+                }
+
+                current_mouse = (100 - currentX.designer_bg) * (center / 50) + center;
+
+                if (current_mouse - center <= -385) {
+                    designerImg.style.width = "840px";
+                }
+                if (current_mouse - center >= -385 && current_mouse - center <= 385) {
+                    designerImg.style.width = ((1 - (current_mouse - center + 385) / 770) * 840 + 1) + 'px';
+                }
+                if (current_mouse - center >= 385) {
+                    designerImg.style.width = '0px';
+                }
+
+                if (current_mouse - center <= -385) {
+                    coderImg.style.width = "0px";
+                }
+                if (current_mouse - center >= -385 && current_mouse - center <= 385) {
+                    coderImg.style.width = (((current_mouse - center + 385) / 770) * 840 + 1) + 'px';
+                }
+                if (current_mouse - center >= 385) {
+                    coderImg.style.width = '840px';
+                }
+                if (
+                    currentX.designer_img == targetX.designer_img
+                    && currentX.coder_img == targetX.coder_img
+                    && currentX.designer_bg == targetX.designer_bg
+                    && currentX.coder_bg == targetX.coder_bg
+                ) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+
+
+            }, 1);
+
+        };
+        window.onload = (e) => {
+            setTimeout(() => {
+                delay_listen();
+            }, 1500);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle cursor effect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle" style="--i:1;--color:#EC3E27"></div>
+        <div class="circle" style="--i:2;--color:#fd79a8"></div>
+        <div class="circle" style="--i:3;--color:#0984e3"></div>
+        <div class="circle" style="--i:4;--color:#00b894"></div>
+        <div class="circle" style="--i:5;--color:#fdcb6e"></div>
+        <div class="circle" style="--i:6;--color:#e056fd"></div>
+        <div class="circle" style="--i:7;--color:#F97F51"></div>
+        <div class="circle" style="--i:8;--color:#BDC581"></div>
+        <div class="circle" style="--i:9;--color:#EC3E27"></div>
+        <div class="circle" style="--i:10;--color:#fd79a8"></div>
+        <div class="circle" style="--i:11;--color:#0984e3"></div>
+        <div class="circle" style="--i:12;--color:#00b894"></div>
+        <div class="circle" style="--i:13;--color:#fdcb6e"></div>
+        <div class="circle" style="--i:14;--color:#e056fd"></div>
+        <div class="circle" style="--i:15;--color:#F97F51"></div>
+        <div class="circle" style="--i:16;--color:#BDC581"></div>
+    </div>
+    <script>
+        let container = document.querySelector('.container');
+
+        let window_width = document.documentElement.clientWidth;
+        let window_height = document.documentElement.clientHeight;
+        container.addEventListener('mousemove', (e) => {
+            let left = e.clientX;
+            let top = e.clientY;
+            let left_p = left / window_width * 100;
+            let top_p = top / window_height * 100;
+            container.style.perspectiveOrigin = left_p + "% " + top_p + "%";
+        });
+
+    </script>
+</body>
+
+</html>
