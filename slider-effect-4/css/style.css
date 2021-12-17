@@ -1,0 +1,91 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+    perspective: 2000px;
+    transform-style: 3d;
+}
+
+.box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-60px) rotateX(-10deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: translateY(-60px) rotateX(-10deg) rotateY(360deg);
+    }
+}
+
+.box div {
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    transform-origin: center;
+    transform: rotateY(calc(45deg * var(--i))) translateZ(600px) scale(.6);
+}
+
+.box h1 {
+    position: absolute;
+    display: block;
+    color: #fff;
+    width: 1000%;
+    text-align: center;
+    font-size: 80px;
+    animation: animate_h1 60s linear infinite;
+}
+
+@keyframes animate_h1 {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(-360deg);
+    }
+}
+
+.box:hover {
+    animation-play-state: paused;
+}
+
+.box:hover h1 {
+    animation-play-state: paused;
+}

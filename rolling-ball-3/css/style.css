@@ -1,0 +1,81 @@
+:root {
+    --background-color: #2c3e50;
+    --ball-color1: #ffae00;
+    --ball-color2: #473e09;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background-color: #FFF;
+    position: relative;
+}
+
+.ball {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at 50px 50px, var(--ball-color1), var(--ball-color2));
+    border-radius: 50%;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    animation: jump 1s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes jump {
+    0%, 100% {
+        top: 10px;
+    }
+
+    50% {
+        top: 200px;
+    }
+}
+
+.shadow {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #10171d;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(70deg);
+    filter: blur(20px);
+    border-radius: 50%;
+    z-index: 1;
+    animation: change 1s ease-in-out infinite;
+}
+
+@keyframes change {
+    0%, 100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0.5;
+    }
+
+    50% {
+        width: 80px;
+        height: 80px;
+        opacity: 0.8;
+    }
+}

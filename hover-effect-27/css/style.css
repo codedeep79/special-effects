@@ -1,0 +1,55 @@
+:root {
+    --background-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.bt {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 4px solid;
+    padding: 12px 24px;
+    position: relative;
+}
+
+a.bt::before, a.bt::after {
+    content: "";
+    position: absolute;
+    background-color: var(--background-color);
+    width: 24px;
+    height: 4px;
+    transform: skew(-30deg);
+    transition: 0.2s linear;
+}
+
+a.bt::before {
+    top: -4px;
+    left: 20%;
+}
+
+a.bt::after {
+    bottom: -4px;
+    right: 20%;
+}
+
+a.bt:hover::before {
+    left: 80%;
+}
+
+a.bt:hover::after {
+    right: 80%;
+}

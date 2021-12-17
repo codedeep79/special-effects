@@ -1,0 +1,137 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+.container {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bt {
+    position: relative;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    background-color: var(--color7);
+    border: 2px solid var(--color7);
+    cursor: pointer;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.bt::after,
+.bt::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    background-color: var(--text-color);
+    z-index: -1;
+}
+
+.bt:nth-child(1)::after {
+    right: 50%;
+}
+
+.bt:nth-child(1)::before {
+    left: 50%;
+}
+
+.bt:nth-child(1):hover::after {
+    right: 110%;
+}
+
+.bt:nth-child(1):hover::before {
+    left: 110%;
+}
+
+.bt:nth-child(2)::after {
+    top: 50%;
+}
+
+.bt:nth-child(2)::before {
+    bottom: 50%;
+}
+
+.bt:nth-child(2):hover::after {
+    top: 110%;
+}
+
+.bt:nth-child(2):hover::before {
+    bottom: 110%;
+}
+
+
+.bt:nth-child(3)::after {
+    transform: skewX(30deg);
+    right: 49%;
+}
+
+.bt:nth-child(3)::before {
+    transform: skewX(30deg);
+    left: 49%;
+}
+
+.bt:nth-child(3):hover::after {
+    right: 110%;
+}
+
+.bt:nth-child(3):hover::before {
+    left: 110%;
+}
+
+
+.bt:nth-child(4)::after {
+    transform: skewX(-30deg);
+    right: 49%;
+}
+
+.bt:nth-child(4)::before {
+    transform: skewX(-30deg);
+    left: 49%;
+}
+
+.bt:nth-child(4):hover::after {
+    right: 110%;
+}
+
+.bt:nth-child(4):hover::before {
+    left: 110%;
+}

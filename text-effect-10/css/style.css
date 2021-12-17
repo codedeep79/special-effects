@@ -1,0 +1,85 @@
+:root {
+    --background-color: #000;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+
+
+
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.woff') format('woff');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20vw;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+    color: #fff;
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    background-image: url(../images/a.gif);
+    background-size: 350%;
+    background-position: 25% 45%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 5vw red;
+}
+
+.container {
+    position: relative;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconfont {
+    background-image: url(../images/a.gif);
+    background-size: 350%;
+    background-position: 25% 45%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 5vw red;
+}
