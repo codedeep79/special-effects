@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles Effect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <script src="js/data.js"></script>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("particles");
+    let ctx = canvas.getContext("2d");
+
+    let w = innerWidth;
+    let h = innerHeight;
+
+    canvas.width = w;
+    canvas.height = h;
+
+    let mClick = true;
+    canvas.addEventListener("click", function () {
+        mClick = !mClick;
+    })
+
+    let particles = [];
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function Particles(ox, oy, tx, ty) {
+
+        this.x = ox;
+        this.y = ox;
+
+        this.ox = ox;
+        this.oy = oy;
+
+        this.ty = ty;
+        this.tx = tx;
+
+        this.lx = ox;
+        this.ly = oy;
+        this.c = Math.random() * 360;
+        this.ax = Math.random() * 0.5;
+        this.ay = Math.random() * 0.5;
+
+
+    }
+
+
+    Particles.prototype.render = function () {
+        if (mClick) {
+
+            ctx.save()
+            ctx.translate(this.x, this.y);
+
+            ctx.beginPath();
+            ctx.fillStyle = "hsla(230,100%,50%,1)"
+            ctx.arc(0, 0, 1, 0, Math.PI * 2, false);
+            ctx.fill()
+            ctx.restore()
+        } else {
+
+            ctx.save()
+
+            ctx.beginPath();
+
+            ctx.strokeStyle = "hsla(" + this.c + ",100%,50%,1)"
+            ctx.moveTo(this.lx, this.ly);
+            ctx.lineTo(this.x, this.y);
+            ctx.stroke();
+            ctx.restore()
+        }
+    }
+
+
+    Particles.prototype.update = function () {
+        this.lx = this.x;
+        this.ly = this.y;
+
+        this.c += 1;
+        if (mClick) {
+            this.x += (this.tx - this.x) * this.ax;
+            this.y += (this.ty - this.y) * this.ay;
+        } else {
+            this.x += (this.ox - this.x) * this.ax;
+            this.y += (this.oy - this.y) * this.ay;
+        }
+    }
+
+
+
+    for (var i = 0; i < data.length; i++) {
+
+        particles.push(new Particles(0, 0, data[i][0] + 500, data[i][1] + 50))
+    }
+
+    function loop() {
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillRect(0, 0, w, h);
+
+        for (var i = 0; i < particles.length; i++) {
+            particles[i].render();
+            particles[i].update();
+        }
+
+    }
+
+    setInterval(loop, 40);
+</script>
+
+</html>
