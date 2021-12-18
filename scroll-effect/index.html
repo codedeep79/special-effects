@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Effect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" id="logo">Logo</a>
+        <ul>
+            <li><a href="#" class='active'>Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" alt="" id="stars">
+        <img src="images/moon.png" alt="" id="moon">
+        <img src="images/mountains_behind.png" alt="" id="mountain_behind">
+        <div id="text">Moon Light</div>
+        <a href="#" id="btn">explore</a>
+        <img src="images/mountains_front.png" alt="" id="mountain_front">
+    </section>
+    <div class="sec">
+        <h2>This is title</h2>
+        <p>
+            There are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many
+            pests in the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree
+            sends for a doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send
+            for an oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor.
+            She pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.There
+            are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many pests in
+            the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree sends for a
+            doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send for an
+            oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor. She
+            pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.<br><br>
+            There are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many
+            pests in the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree
+            sends for a doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send
+            for an oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor.
+            She pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.There
+            are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many pests in
+            the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree sends for a
+            doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send for an
+            oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor. She
+            pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.<br><br>
+            There are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many
+            pests in the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree
+            sends for a doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send
+            for an oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor.
+            She pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.There
+            are many apple trees in a garden. They’re good friends. One day an old tree is ill. There are many pests in
+            the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell. Another tree sends for a
+            doctor for him. At first, they send for a pigeon, but she has no idea about it. Then they send for an
+            oriole, and she can’t treat the old tree well. Then they send for a woodpecker. She is a good doctor. She
+            pecks a hole in the tree and eats lots of pests. At last the old tree becomes better and better.<br><br>
+        </p>
+    </div>
+</body>
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+    let stars = $('stars');
+    let moon = $('moon');
+    let mountain_behind = $('mountain_behind');
+    let text = $('text');
+    let btn = $('btn');
+    let mountain_front = $('mountain_front');
+
+
+    window.addEventListener('scroll', function () {
+        let value = window.scrollY
+        stars.style.left = value * 0.25 + 'px';
+        moon.style.top = value * 1.2 + 'px';
+        mountain_behind.style.top = value * 0.5 + 'px';
+        text.style.marginRight = value * 4 + 'px';
+        text.style.marginTop = value * 0.5 + 'px';
+        btn.style.marginRight = value * 1.5 + 'px';
+        btn.style.marginTop = value * 0.5 + 'px';
+    })
+</script>
+
+</html>

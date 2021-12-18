@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day and Light Mode</title>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <section class='sec'>
+        <div class="card">
+            <div class="toggle">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </div>
+            <div class="content">
+                <div class="text-img">
+                    <div class="img-box">
+                        <img src="images/1.jpg" alt="">
+                    </div>
+                    <h3>
+                        Study is important<br>
+                        <span>
+                            you need to study
+                        </span>
+                    </h3>
+                </div>
+                <ul class="sci">
+                    <li><a href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const sec = document.querySelector('.sec');
+    const toggle = document.querySelector('.toggle');
+    toggle.onclick = function () {
+        sec.classList.toggle('dark')
+        if (sec.className.indexOf('dark') > -1) {
+            toggle.innerHTML = '<i class="fa fa-sun-o" aria-hidden="true"></i>'
+        } else {
+            toggle.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>'
+        }
+    }
+</script>
+
+</html>
